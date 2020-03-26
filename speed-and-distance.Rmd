@@ -1,12 +1,27 @@
 ---
-title: "speed-and-distance"
+title: "speed-and-distance" 
 author: "Ashley Akerman"
 date: "26/03/2020"
+knit: (function(input_file, encoding) {
+      out_dir <- 'docs';
+      if(!file.exists(out_dir)) { dir.create(out_dir) };
+      rmarkdown::render(input_file,
+                        encoding=encoding,
+                        output_file=file.path(dirname(input_file), out_dir, 'index.html')) })
+  
 output: html_document
 ---
 
+knit: (function(inputFile, encoding) { 
+      out_dir <- 'test';
+      rmarkdown::render(inputFile,
+                        encoding=encoding, 
+                        output_file=file.path(dirname(inputFile), out_dir, 'analysis.html')) })
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 
 ## R Markdown
